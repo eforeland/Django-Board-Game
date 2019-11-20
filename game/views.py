@@ -21,7 +21,8 @@ def get_player(request, id):
 
 def displayBoard(request):
 	players = Player.objects.all()
-	brd = Board.objects.all()
+	
+	brd = Board.objects.filter(tag=0)
 	b = brd[0]
 
 	brdArr = [['_' for c in range(b.col)] for r in range(b.row)]
